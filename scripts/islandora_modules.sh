@@ -41,6 +41,8 @@ git clone https://github.com/Islandora/tuque.git
 git clone git://github.com/scholarslab/BagItPHP.git
 git clone https://github.com/Islandora/citeproc-php.git
 
+git clone git://github.com/Islandora-Labs/islandora_binary_object
+
 cd "$DRUPAL_HOME"/sites/all/libraries/tuque || exit
 git config core.filemode false
 cd "$DRUPAL_HOME"/sites/all/libraries/BagItPHP || exit
@@ -72,14 +74,42 @@ if [ -d "$HOME_DIR/.drush" ] && [ -f "$DRUPAL_HOME/sites/all/modules/islandora_i
   mv "$DRUPAL_HOME/sites/all/modules/islandora_internet_archive_bookreader/islandora_internet_archive_bookreader.drush.inc" "$HOME_DIR/.drush"
 fi
 
-drush -y -u 1 en php_lib islandora objective_forms
-drush -y -u 1 en islandora_solr islandora_solr_metadata islandora_solr_facet_pages islandora_solr_views
-drush -y -u 1 en islandora_basic_collection islandora_pdf islandora_audio islandora_book islandora_compound_object islandora_disk_image islandora_entities islandora_entities_csv_import islandora_basic_image islandora_large_image islandora_newspaper islandora_video islandora_web_archive
-drush -y -u 1 en islandora_premis islandora_checksum islandora_checksum_checker
-drush -y -u 1 en islandora_book_batch islandora_pathauto islandora_pdfjs islandora_videojs islandora_jwplayer
-drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements xml_form_api jquery_update zip_importer islandora_basic_image islandora_bibliography islandora_compound_object islandora_google_scholar islandora_scholar_embargo islandora_solr_config citation_exporter doi_importer endnotexml_importer pmid_importer ris_importer
-drush -y -u 1 en islandora_fits islandora_ocr islandora_oai islandora_marcxml islandora_simple_workflow islandora_xacml_api islandora_xacml_editor islandora_xmlsitemap colorbox islandora_internet_archive_bookreader islandora_bagit islandora_batch_report islandora_usage_stats islandora_form_fieldpanel islandora_populator islandora_newspaper_batch 
 
+drush -y -u 1 en php_lib islandora objective_forms
+drush -y -u 1 en islandora_solr islandora_solr_metadata
+drush -y -u 1 en islandora_solr_facet_pages
+drush -y -u 1 en islandora_solr_views
+drush -y -u 1 en islandora_basic_collection islandora_pdf islandora_audio
+drush -y -u 1 en islandora_book islandora_compound_object
+drush -y -u 1 en islandora_disk_image
+drush -y -u 1 en islandora_entities islandora_entities_csv_import
+drush -y -u 1 en islandora_basic_image islandora_large_image
+drush -y -u 1 en islandora_newspaper islandora_video islandora_web_archive
+drush -y -u 1 en islandora_premis islandora_checksum islandora_checksum_checker
+drush -y -u 1 en islandora_book_batch
+drush -y -u 1 en islandora_pathauto
+drush -y -u 1 en islandora_pdfjs islandora_videojs islandora_jwplayer
+drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements
+drush -y -u 1 en xml_form_api jquery_update zip_importer islandora_basic_image
+drush -y -u 1 en islandora_bibliography
+drush -y -u 1 en islandora_compound_object
+drush -y -u 1 en islandora_google_scholar
+drush -y -u 1 en islandora_scholar_embargo
+drush -y -u 1 en islandora_solr_config
+drush -y -u 1 en citation_exporter doi_importer endnotexml_importer pmid_importer ris_importer
+drush -y -u 1 en islandora_fits islandora_ocr islandora_oai
+drush -y -u 1 en islandora_marcxml
+drush -y -u 1 en islandora_simple_workflow
+drush -y -u 1 en islandora_xacml_api islandora_xacml_editor
+drush -y -u 1 en islandora_xmlsitemap colorbox
+drush -y -u 1 en islandora_internet_archive_bookreader
+drush -y -u 1 en islandora_bagit islandora_batch_report
+drush -y -u 1 en islandora_usage_stats
+drush -y -u 1 en islandora_form_fieldpanel
+drush -y -u 1 en islandora_populator
+drush -y -u 1 en islandora_newspaper_batch
+
+drush -y -u 1 en islandora_binary_object
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 
 # Set variables for Islandora modules
