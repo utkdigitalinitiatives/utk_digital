@@ -98,7 +98,6 @@ drush -y -u 1 en islandora_scholar_embargo
 drush -y -u 1 en islandora_solr_config
 drush -y -u 1 en citation_exporter doi_importer endnotexml_importer pmid_importer ris_importer
 drush -y -u 1 en islandora_fits islandora_ocr islandora_oai
-drush -y -u 1 en islandora_marcxml
 drush -y -u 1 en islandora_simple_workflow
 drush -y -u 1 en islandora_xacml_api islandora_xacml_editor
 drush -y -u 1 en islandora_xmlsitemap colorbox
