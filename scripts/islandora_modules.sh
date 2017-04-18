@@ -39,7 +39,7 @@ fi
 cd "$DRUPAL_HOME"/sites/all/libraries || exit
 git clone https://github.com/Islandora/tuque.git
 git clone git://github.com/scholarslab/BagItPHP.git
-git clone https://github.com/Islandora/citeproc-php.git
+#git clone https://github.com/Islandora/citeproc-php.git
 
 git clone git://github.com/Islandora-Labs/islandora_binary_object
 
@@ -91,21 +91,21 @@ drush -y -u 1 en islandora_pathauto
 drush -y -u 1 en islandora_pdfjs islandora_videojs islandora_jwplayer
 drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements
 drush -y -u 1 en xml_form_api jquery_update zip_importer islandora_basic_image
-drush -y -u 1 en islandora_bibliography
+#drush -y -u 1 en islandora_bibliography
 drush -y -u 1 en islandora_compound_object
 drush -y -u 1 en islandora_google_scholar
-drush -y -u 1 en islandora_scholar_embargo
+#drush -y -u 1 en islandora_scholar_embargo
 drush -y -u 1 en islandora_solr_config
-drush -y -u 1 en citation_exporter doi_importer endnotexml_importer pmid_importer ris_importer
+#drush -y -u 1 en citation_exporter doi_importer endnotexml_importer pmid_importer ris_importer
 drush -y -u 1 en islandora_fits islandora_ocr islandora_oai
 drush -y -u 1 en islandora_simple_workflow
 drush -y -u 1 en islandora_xacml_api islandora_xacml_editor
 drush -y -u 1 en islandora_xmlsitemap colorbox
 drush -y -u 1 en islandora_internet_archive_bookreader
-drush -y -u 1 en islandora_bagit islandora_batch_report
+#drush -y -u 1 en islandora_bagit islandora_batch_report
 drush -y -u 1 en islandora_usage_stats
 drush -y -u 1 en islandora_form_fieldpanel
-drush -y -u 1 en islandora_populator
+#drush -y -u 1 en islandora_populator
 drush -y -u 1 en islandora_newspaper_batch
 
 drush -y -u 1 en islandora_binary_object
