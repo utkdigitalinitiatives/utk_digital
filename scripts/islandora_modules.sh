@@ -22,6 +22,20 @@ cd "$DRUPAL_HOME"/sites/all/modules || exit
 while read -r LINE; do
   git clone https://github.com/Islandora/"$LINE"
 done < "$SHARED_DIR"/configs/islandora-module-list-sans-tuque.txt
+# Clone all non-Islandora modules
+cd "$DRUPAL_HOME"/sites/all/modules || exit
+#- islandora_transcript
+git clone https://github.com/yorkulibraries/islandora_transcript
+#- discoverygarden islandora collection search
+git clone https://github.com/discoverygarden/islandora_collection_search
+#- discoverygarden islandora paged tei seadragon
+git clone https://github.com/discoverygarden/islandora_paged_tei_seadragon
+#- discoverygarden islandora rest
+git clone https://github.com/discoverygarden/islandora_rest
+#- discoverygarden islandora_solution_pack_manuscript
+git clone https://github.com/discoverygarden/islandora_solution_pack_manuscript
+
+
 
 # Set git filemode false for git
 cd "$DRUPAL_HOME"/sites/all/modules || exit
