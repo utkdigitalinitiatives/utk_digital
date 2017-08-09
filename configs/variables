@@ -9,10 +9,10 @@ DJATOKA_HOME="/usr/local/djatoka"
 
 FEDORA_HOME="/usr/local/fedora"
 
-FFMPEG_VERSION=1.1.4
+FFMPEG_VERSION=2.6.8
 
 FITS_HOME="/usr/local/fits"
-FITS_VERSION=1.0.6
+FITS_VERSION=1.1.1
 
 SOLR_HOME="/usr/local/solr"
 SOLR_VERSION=4.2.0
