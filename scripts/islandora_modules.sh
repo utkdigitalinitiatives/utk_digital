@@ -22,6 +22,32 @@ cd "$DRUPAL_HOME"/sites/all/modules || exit
 while read -r LINE; do
   git clone https://github.com/Islandora/"$LINE"
 done < "$SHARED_DIR"/configs/islandora-module-list-sans-tuque.txt
+# Clone all non-Islandora modules
+cd "$DRUPAL_HOME"/sites/all/modules || exit
+#- islandora_transcript
+git clone https://github.com/yorkulibraries/islandora_transcript
+#- discoverygarden islandora collection search
+git clone https://github.com/discoverygarden/islandora_collection_search
+#- discoverygarden islandora paged tei seadragon
+git clone https://github.com/discoverygarden/islandora_paged_tei_seadragon
+#- discoverygarden islandora rest
+git clone https://github.com/discoverygarden/islandora_rest
+#- discoverygarden islandora_solution_pack_manuscript
+git clone https://github.com/discoverygarden/islandora_solution_pack_manuscript
+#- drexel ead solution pack
+git clone git://github.com/DrexelUniversityLibraries/islandora_solution_pack_ead
+#- discoverygarden islandora_binary_object
+git clone git://github.com/Islandora-Labs/islandora_binary_object
+#- Islandora-mjordan islandora_scg
+git clone git://github.com/mjordan/islandora_scg
+#- islandora_datastream_exporter
+git clone https://github.com/pc37utn/islandora_datastream_exporter
+#- islandora_datastream_replace
+git clone https://github.com/pc37utn/islandora_datastream_replace
+
+
+
+
 
 # Set git filemode false for git
 cd "$DRUPAL_HOME"/sites/all/modules || exit
@@ -30,6 +56,7 @@ while read -r LINE; do
   git config core.filemode false
   cd "$DRUPAL_HOME"/sites/all/modules || exit
 done < "$SHARED_DIR"/configs/islandora-module-list-sans-tuque.txt
+git clone git://github.com/Islandora-Labs/islandora_binary_object
 
 # Clone Tuque, BagItPHP, and Cite-Proc
 cd "$DRUPAL_HOME"/sites/all || exit
@@ -39,9 +66,10 @@ fi
 cd "$DRUPAL_HOME"/sites/all/libraries || exit
 git clone https://github.com/Islandora/tuque.git
 git clone git://github.com/scholarslab/BagItPHP.git
-git clone https://github.com/Islandora/citeproc-php.git
+#git clone https://github.com/Islandora/citeproc-php.git
+# jstree library
+git clone https://github.com/vakata/jstree.git
 
-git clone git://github.com/Islandora-Labs/islandora_binary_object
 
 cd "$DRUPAL_HOME"/sites/all/libraries/tuque || exit
 git config core.filemode false
@@ -81,32 +109,25 @@ drush -y -u 1 en islandora_solr_facet_pages
 drush -y -u 1 en islandora_solr_views
 drush -y -u 1 en islandora_basic_collection islandora_pdf islandora_audio
 drush -y -u 1 en islandora_book islandora_compound_object
-drush -y -u 1 en islandora_disk_image
-drush -y -u 1 en islandora_entities islandora_entities_csv_import
 drush -y -u 1 en islandora_basic_image islandora_large_image
-drush -y -u 1 en islandora_newspaper islandora_video islandora_web_archive
+drush -y -u 1 en islandora_newspaper islandora_video
 drush -y -u 1 en islandora_premis islandora_checksum islandora_checksum_checker
 drush -y -u 1 en islandora_book_batch
 drush -y -u 1 en islandora_pathauto
 drush -y -u 1 en islandora_pdfjs islandora_videojs islandora_jwplayer
 drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements
 drush -y -u 1 en xml_form_api jquery_update zip_importer islandora_basic_image
-drush -y -u 1 en islandora_bibliography
 drush -y -u 1 en islandora_compound_object
 drush -y -u 1 en islandora_google_scholar
-drush -y -u 1 en islandora_scholar_embargo
 drush -y -u 1 en islandora_solr_config
-drush -y -u 1 en citation_exporter doi_importer endnotexml_importer pmid_importer ris_importer
 drush -y -u 1 en islandora_fits islandora_ocr islandora_oai
-drush -y -u 1 en islandora_marcxml
 drush -y -u 1 en islandora_simple_workflow
 drush -y -u 1 en islandora_xacml_api islandora_xacml_editor
 drush -y -u 1 en islandora_xmlsitemap colorbox
 drush -y -u 1 en islandora_internet_archive_bookreader
-drush -y -u 1 en islandora_bagit islandora_batch_report
+#drush -y -u 1 en islandora_bagit islandora_batch_report
 drush -y -u 1 en islandora_usage_stats
 drush -y -u 1 en islandora_form_fieldpanel
-drush -y -u 1 en islandora_populator
 drush -y -u 1 en islandora_newspaper_batch
 
 drush -y -u 1 en islandora_binary_object
