@@ -93,9 +93,9 @@ ssh, scp, rsync:
 - Solr 4.2.0
 - Fedora 3.8.1
 - GSearch HEAD
-- PHP 5.x (current in Redhat/CentOS)
+- PHP 5.6 (from ext. remi repo)
 - Java 8 (Oracle)
-- FITS 0.10.1
+- FITS 1.1.1
 - drush 8.x (current in Redhat/CentOS)
 
 ## Maintainers
