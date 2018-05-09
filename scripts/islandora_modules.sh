@@ -24,6 +24,8 @@ while read -r LINE; do
 done < "$SHARED_DIR"/configs/islandora-module-list-sans-tuque.txt
 # Clone all non-Islandora modules
 cd "$DRUPAL_HOME"/sites/all/modules || exit
+#- islandora_bagit -- custom
+git clone https://github.com/utkdigitalinitiatives/islandora_bagit
 #- islandora_transcript
 git clone https://github.com/yorkulibraries/islandora_transcript
 #- discoverygarden islandora collection search
@@ -47,8 +49,6 @@ git clone https://github.com/pc37utn/islandora_datastream_replace
 
 
 
-
-
 # Set git filemode false for git
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 while read -r LINE; do
@@ -56,7 +56,6 @@ while read -r LINE; do
   git config core.filemode false
   cd "$DRUPAL_HOME"/sites/all/modules || exit
 done < "$SHARED_DIR"/configs/islandora-module-list-sans-tuque.txt
-git clone git://github.com/Islandora-Labs/islandora_binary_object
 
 # Clone Tuque, BagItPHP, and Cite-Proc
 cd "$DRUPAL_HOME"/sites/all || exit
