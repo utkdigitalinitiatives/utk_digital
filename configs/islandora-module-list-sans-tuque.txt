@@ -7,13 +7,11 @@ islandora_checksum_checker
 islandora_fits
 islandora_importer
 islandora_internet_archive_bookreader
-islandora_jwplayer
 islandora_newspaper_batch
 islandora_oai
 islandora_ocr
 islandora_openseadragon
 islandora_paged_content
-islandora_pathauto
 islandora_pdfjs
 islandora_premis
 islandora_simple_workflow
