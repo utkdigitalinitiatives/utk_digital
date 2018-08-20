@@ -115,7 +115,6 @@ drush -y -u 1 en islandora_pdfjs islandora_videojs islandora_jwplayer
 drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements
 drush -y -u 1 en xml_form_api jquery_update zip_importer islandora_basic_image
 drush -y -u 1 en islandora_compound_object
-drush -y -u 1 en islandora_google_scholar
 drush -y -u 1 en islandora_solr_config
 drush -y -u 1 en islandora_fits islandora_ocr islandora_oai
 drush -y -u 1 en islandora_simple_workflow
