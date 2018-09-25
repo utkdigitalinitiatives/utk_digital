@@ -13,13 +13,18 @@ cd UTKdrupal || exit
  git branch -r
  git checkout -b digital_collections origin/digital_collections
 git pull
-cp sis "$DRUPAL_HOME"/sites/all/themes || exit
-cp banners "$DRUPAL_HOME"/sites/all/themes || exit
+# Set permissions UTKdrupal
+#sudo chown -hR vagrant:apache UTKdrupal
+sudo chown -hR vagrant:apache sis banners omega
+
+cp -r /home/vagrant/UTKdrupal/sis /var/www/drupal/sites/all/themes/ || exit
+cp -r /home/vagrant/UTKdrupal/banners /var/www/drupal/sites/all/themes/ || exit
+cp -r /home/vagrant/UTKdrupal/omega /var/www/drupal/sites/all/themes/ || exit
 cd "$DRUPAL_HOME"/sites/all/themes || exit
 
 # Set permissions UTKdrupal
-sudo chown -hR vagrant:apache UTKdrupal
-sudo chown -hR vagrant:apache sis banners
+#sudo chown -hR vagrant:apache UTKdrupal
+#sudo chown -hR vagrant:apache sis banners
 
 # Enable sis and set as default
 drush -y en sis
