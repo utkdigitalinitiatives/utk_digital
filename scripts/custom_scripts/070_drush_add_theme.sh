@@ -6,22 +6,32 @@ sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/themes
 cd "$DRUPAL_HOME"/sites/all/themes || exit
 
 # Clone UTKdrupal Theme
+cd $HOME_DIR
 git clone https://github.com/utkdigitalinitiatives/UTKdrupal
-cd "$DRUPAL_HOME"/sites/all/themes/UTKdrupal || exit
-# git fetch
-# git branch -r
-# git checkout -b october origin/october
-#git pull
+cd UTKdrupal || exit
+ git fetch
+ git branch -r
+ git checkout -b digital_collections origin/digital_collections
+git pull
+cp sis "$DRUPAL_HOME"/sites/all/themes || exit
+cp banners "$DRUPAL_HOME"/sites/all/themes || exit
 cd "$DRUPAL_HOME"/sites/all/themes || exit
 
 # Set permissions UTKdrupal
 sudo chown -hR vagrant:apache UTKdrupal
+sudo chown -hR vagrant:apache sis banners
+
+# Enable sis and set as default
+drush -y en sis
+drush -y vset theme_default sis
+# uncomment below to set as default
+drush eval "variable_set('theme_default', 'sis')"
 
 # Enable UTKdrupal and set as default
-drush -y en UTKdrupal
-drush -y vset theme_default UTKdrupal
+#drush -y en UTKdrupal
+#drush -y vset theme_default UTKdrupal
 # uncomment below to set as default
-drush eval "variable_set('theme_default', 'UTKdrupal')"
+#drush eval "variable_set('theme_default', 'UTKdrupal')"
 
 # Admin Theme Adminimal https://www.drupal.org/project/adminimal_theme
 cd "$DRUPAL_HOME"/sites/all/modules/ || exit
