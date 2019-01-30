@@ -14,7 +14,6 @@ islandora_openseadragon
 islandora_paged_content
 islandora_pdfjs
 islandora_premis
-islandora_simple_workflow
 islandora_solr_facet_pages
 islandora_solr_metadata
 islandora_solr_search
