@@ -35,14 +35,10 @@ git clone https://github.com/discoverygarden/islandora_paged_tei_seadragon
 git clone https://github.com/discoverygarden/islandora_rest
 #- discoverygarden islandora_solution_pack_manuscript
 git clone https://github.com/discoverygarden/islandora_solution_pack_manuscript
-#- drexel ead solution pack
-git clone git://github.com/DrexelUniversityLibraries/islandora_solution_pack_ead
 #- discoverygarden islandora_binary_object
 git clone git://github.com/Islandora-Labs/islandora_binary_object
-#- Islandora-mjordan islandora_scg
-git clone git://github.com/mjordan/islandora_scg
 #- islandora_datastream_exporter
-git clone https://github.com/pc37utn/islandora_datastream_exporter
+git clone https://github.com/Islandora-Labs/islandora_datastream_exporter
 #- islandora_datastream_replace
 git clone https://github.com/pc37utn/islandora_datastream_replace
 
