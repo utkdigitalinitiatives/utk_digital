@@ -146,8 +146,6 @@ drush -y -u 1 islandora_compound_batch
 drush -y -u 1 islandora_datastream_crud
 drush -y -u 1 islandora_social_metatags
 
-drush dl drush_extras
-
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 
 # Set variables for Islandora modules

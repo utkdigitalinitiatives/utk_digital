@@ -32,7 +32,7 @@ cd "$DRUPAL_HOME"/sites/all/modules/ || exit
 #drush -y vset admin_menu_margin_top 0
 #drush -y vset adminimal_admin_menu_render "hidden"
 
-# drush dis -y comment contextual dashboard overlay
+drush dis -y comment contextual dashboard overlay
 
 # Disable Unneeded Themes
 #drush -y dis bartik
@@ -46,10 +46,7 @@ sudo yum -y install subversion
 drush -y en devel
 
 # Rebuild on every page, needs to be disabled on production env
-devel_rebuild_theme_registry: 1
+drush -y vset devel_rebuild_theme_registry 1
 
 # Fix Admin menu
-#drush -y vset admin_menu_margin_top 1
-
-# Removes powered by drupal text and the area it blocks content with.
-drush block-configure --module=system --delta=powered-by --region=-1 --weight=0
+drush -y vset admin_menu_margin_top 1
