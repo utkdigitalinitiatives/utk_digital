@@ -120,7 +120,7 @@ drush -y -u 1 en islandora_basic_image islandora_large_image
 drush -y -u 1 en islandora_newspaper islandora_video
 drush -y -u 1 en islandora_premis islandora_checksum islandora_checksum_checker
 drush -y -u 1 en islandora_book_batch
-drush -y -u 1 en islandora_pdfjs islandora_videojs islandora_jwplayer
+drush -y -u 1 en islandora_pdfjs islandora_videojs
 drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements
 drush -y -u 1 en xml_form_api jquery_update zip_importer islandora_basic_image
 drush -y -u 1 en islandora_compound_object
@@ -145,6 +145,8 @@ drush -y -u 1 islandora_batch_derivative_trigger
 drush -y -u 1 islandora_compound_batch
 drush -y -u 1 islandora_datastream_crud
 drush -y -u 1 islandora_social_metatags
+
+drush dl drush_extras
 
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 

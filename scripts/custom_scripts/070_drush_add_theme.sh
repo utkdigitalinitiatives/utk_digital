@@ -50,3 +50,6 @@ devel_rebuild_theme_registry: 1
 
 # Fix Admin menu
 #drush -y vset admin_menu_margin_top 1
+
+# Removes powered by drupal text and the area it blocks content with.
+drush block-configure --module=system --delta=powered-by --region=-1 --weight=0
