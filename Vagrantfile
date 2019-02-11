@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "c7vbb"
   config.vm.box_url = "http://dlweb.lib.utk.edu/vboxes/c7vbb.json"
-  #config.vm.box_url = "http://dlwork.lib.utk.edu/vboxes/c7vbb-0.1.6.box"
+
 
 
   unless  $forward.eql? "FALSE"  
