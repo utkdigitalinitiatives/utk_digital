@@ -5,7 +5,6 @@ echo "Installing all Islandora Foundation modules"
 SHARED_DIR=$1
 
 if [ -f "$SHARED_DIR/configs/variables" ]; then
-  # shellcheck source=/dev/null
   . "$SHARED_DIR"/configs/variables
 fi
 
@@ -36,14 +35,10 @@ git clone https://github.com/discoverygarden/islandora_paged_tei_seadragon
 git clone https://github.com/discoverygarden/islandora_rest
 #- discoverygarden islandora_solution_pack_manuscript
 git clone https://github.com/discoverygarden/islandora_solution_pack_manuscript
-#- drexel ead solution pack
-git clone git://github.com/DrexelUniversityLibraries/islandora_solution_pack_ead
 #- discoverygarden islandora_binary_object
 git clone git://github.com/Islandora-Labs/islandora_binary_object
-#- Islandora-mjordan islandora_scg
-git clone git://github.com/mjordan/islandora_scg
 #- islandora_datastream_exporter
-git clone https://github.com/pc37utn/islandora_datastream_exporter
+git clone https://github.com/Islandora-Labs/islandora_datastream_exporter
 #- islandora_datastream_replace
 git clone https://github.com/pc37utn/islandora_datastream_replace
 
@@ -65,7 +60,6 @@ fi
 cd "$DRUPAL_HOME"/sites/all/libraries || exit
 git clone https://github.com/Islandora/tuque.git
 git clone git://github.com/scholarslab/BagItPHP.git
-#git clone https://github.com/Islandora/citeproc-php.git
 # jstree library
 git clone https://github.com/vakata/jstree.git
 
@@ -117,7 +111,6 @@ drush -y -u 1 en islandora_pdfjs islandora_videojs islandora_jwplayer
 drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements
 drush -y -u 1 en xml_form_api jquery_update zip_importer islandora_basic_image
 drush -y -u 1 en islandora_compound_object
-drush -y -u 1 en islandora_google_scholar
 drush -y -u 1 en islandora_solr_config
 drush -y -u 1 en islandora_fits islandora_ocr islandora_oai
 drush -y -u 1 en islandora_simple_workflow

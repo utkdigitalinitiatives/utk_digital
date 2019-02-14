@@ -24,6 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "http://dlweb.lib.utk.edu/vboxes/c7vbb.json"
 
 
+
   unless  $forward.eql? "FALSE"  
     config.vm.network :forwarded_port, guest: 8080, host: 8080 # Tomcat
     config.vm.network :forwarded_port, guest: 3306, host: 3306 # MySQL
