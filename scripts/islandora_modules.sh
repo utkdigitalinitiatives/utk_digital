@@ -5,7 +5,6 @@ echo "Installing all Islandora Foundation modules"
 SHARED_DIR=$1
 
 if [ -f "$SHARED_DIR/configs/variables" ]; then
-  # shellcheck source=/dev/null
   . "$SHARED_DIR"/configs/variables
 fi
 
@@ -56,7 +55,6 @@ git clone https://github.com/qadan/islandora_batch_derivative_trigger
 git clone https://github.com/MarcusBarnes/islandora_compound_batch
 git clone https://github.com/SFULibrary/islandora_datastream_crud
 
-
 # Set git filemode false for git
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 while read -r LINE; do
@@ -72,6 +70,7 @@ if [ ! -d libraries ]; then
 fi
 cd "$DRUPAL_HOME"/sites/all/libraries || exit
 git clone https://github.com/Islandora/tuque.git
+
 git clone https://github.com/scholarslab/BagItPHP.git
 # git clone https://github.com/Islandora/citeproc-php.git
 # jstree library
@@ -124,7 +123,6 @@ drush -y -u 1 en islandora_pdfjs islandora_videojs
 drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements
 drush -y -u 1 en xml_form_api jquery_update zip_importer islandora_basic_image
 drush -y -u 1 en islandora_compound_object
-drush -y -u 1 en islandora_google_scholar
 drush -y -u 1 en islandora_solr_config
 drush -y -u 1 en islandora_fits islandora_ocr islandora_oai
 drush -y -u 1 en islandora_simple_workflow
