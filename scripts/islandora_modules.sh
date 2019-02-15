@@ -25,6 +25,18 @@ done < "$SHARED_DIR"/configs/islandora-module-list-sans-tuque.txt
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 #- islandora_bagit -- custom
 git clone https://github.com/utkdigitalinitiatives/islandora_bagit
+git clone https://github.com/utkdigitalinitiatives/islandora_ingest_collections
+# - utk_lib_feedback
+# git clone https://github.com/utkdigitalinitiatives/utk_lib_feedback
+#- islandora_datastream_replace
+git clone https://github.com/pc37utn/islandora_datastream_replace
+
+#- islandora_datastream_exporter
+git clone https://github.com/Islandora-Labs/islandora_datastream_exporter
+#- discoverygarden islandora_binary_object
+git clone https://github.com/Islandora-Labs/islandora_binary_object
+git clone https://github.com/Islandora-Labs/islandora_social_metatags
+
 #- islandora_transcript
 git clone https://github.com/yorkulibraries/islandora_transcript
 #- discoverygarden islandora collection search
@@ -35,14 +47,13 @@ git clone https://github.com/discoverygarden/islandora_paged_tei_seadragon
 git clone https://github.com/discoverygarden/islandora_rest
 #- discoverygarden islandora_solution_pack_manuscript
 git clone https://github.com/discoverygarden/islandora_solution_pack_manuscript
-#- discoverygarden islandora_binary_object
-git clone git://github.com/Islandora-Labs/islandora_binary_object
-#- islandora_datastream_exporter
-git clone https://github.com/Islandora-Labs/islandora_datastream_exporter
-#- islandora_datastream_replace
-git clone https://github.com/pc37utn/islandora_datastream_replace
-
-
+#- Islandora-mjordan islandora_scg
+git clone https://github.com/mjordan/islandora_scg
+# qadan / Islandora Batch Derivative Trigger
+git clone https://github.com/qadan/islandora_batch_derivative_trigger
+# MarcusBarnes / islandora_compound_batch
+git clone https://github.com/MarcusBarnes/islandora_compound_batch
+git clone https://github.com/SFULibrary/islandora_datastream_crud
 
 # Set git filemode false for git
 cd "$DRUPAL_HOME"/sites/all/modules || exit
@@ -59,7 +70,9 @@ if [ ! -d libraries ]; then
 fi
 cd "$DRUPAL_HOME"/sites/all/libraries || exit
 git clone https://github.com/Islandora/tuque.git
-git clone git://github.com/scholarslab/BagItPHP.git
+
+git clone https://github.com/scholarslab/BagItPHP.git
+# git clone https://github.com/Islandora/citeproc-php.git
 # jstree library
 git clone https://github.com/vakata/jstree.git
 
@@ -95,7 +108,7 @@ if [ -d "$HOME_DIR/.drush" ] && [ -f "$DRUPAL_HOME/sites/all/modules/islandora_i
   mv "$DRUPAL_HOME/sites/all/modules/islandora_internet_archive_bookreader/islandora_internet_archive_bookreader.drush.inc" "$HOME_DIR/.drush"
 fi
 
-
+# Enable Modules
 drush -y -u 1 en php_lib islandora objective_forms
 drush -y -u 1 en islandora_solr islandora_solr_metadata
 drush -y -u 1 en islandora_solr_facet_pages
@@ -106,8 +119,7 @@ drush -y -u 1 en islandora_basic_image islandora_large_image
 drush -y -u 1 en islandora_newspaper islandora_video
 drush -y -u 1 en islandora_premis islandora_checksum islandora_checksum_checker
 drush -y -u 1 en islandora_book_batch
-drush -y -u 1 en islandora_pathauto
-drush -y -u 1 en islandora_pdfjs islandora_videojs islandora_jwplayer
+drush -y -u 1 en islandora_pdfjs islandora_videojs
 drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements
 drush -y -u 1 en xml_form_api jquery_update zip_importer islandora_basic_image
 drush -y -u 1 en islandora_compound_object
@@ -117,12 +129,21 @@ drush -y -u 1 en islandora_simple_workflow
 drush -y -u 1 en islandora_xacml_api islandora_xacml_editor
 drush -y -u 1 en islandora_xmlsitemap colorbox
 drush -y -u 1 en islandora_internet_archive_bookreader
-#drush -y -u 1 en islandora_bagit islandora_batch_report
+drush -y -u 1 en islandora_bagit
 drush -y -u 1 en islandora_usage_stats
 drush -y -u 1 en islandora_form_fieldpanel
 drush -y -u 1 en islandora_newspaper_batch
-
+# drush -y -u 1 en utk_lib_feedback
 drush -y -u 1 en islandora_binary_object
+drush -y -u 1 en islandora_batch_derivative_trigger
+drush -y -u 1 en islandora_compound_batch
+drush -y -u 1 islandora_collection_search
+drush -y -u 1 islandora_importer
+drush -y -u 1 islandora_batch_derivative_trigger
+drush -y -u 1 islandora_compound_batch
+drush -y -u 1 islandora_datastream_crud
+drush -y -u 1 islandora_social_metatags
+
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 
 # Set variables for Islandora modules

@@ -15,6 +15,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
   config.vm.provider "virtualbox" do |v|
     v.name = "UTK DI Development VM"
+    # Prevent VirtualBox from interfering with host audio stack
+    v.customize ["modifyvm", :id, "--audio", "none"]
   end
 
   config.vm.hostname = $hostname
@@ -22,7 +24,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "c7vbb"
   config.vm.box_url = "http://dlweb.lib.utk.edu/vboxes/c7vbb.json"
-
 
 
   unless  $forward.eql? "FALSE"  
