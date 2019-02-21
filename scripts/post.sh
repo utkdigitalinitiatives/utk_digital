@@ -2,11 +2,23 @@
 
 # Setup a user for Tomcat Manager
 sed -i '$i<role rolename="admin-gui"/>' /etc/tomcat/tomcat-users.xml
+sed -i '$i<role rolename="manager-gui"/>' /etc/tomcat/tomcat-users.xml
 sed -i '$i<user username="islandora" password="islandora" roles="manager-gui,admin-gui"/>' /etc/tomcat/tomcat-users.xml
 systemctl restart tomcat
 
 # Set correct permissions on sites/default/files
-chmod -R 775 /var/www/drupal/sites/default/files
+chown -R apache.apache "$DRUPAL_HOME"/sites/default/files
+
+cd "$DRUPAL_HOME" || exit
+drush vset islandora_openseadragon_tilesource 'iiif'
+drush vset islandora_openseadragon_iiif_url 'http://localhost:8000/iiif/2'
+drush vset islandora_openseadragon_iiif_token_header 1
+drush vset islandora_openseadragon_iiif_identifier '[islandora_openseadragon:pid]~[islandora_openseadragon:dsid]~[islandora_openseadragon:token]'
+
+drush vset islandora_internet_archive_bookreader_iiif_identifier '[islandora_iareader:pid]~[islandora_iareader:dsid]~[islandora_iareader:token]'
+drush vset islandora_internet_archive_bookreader_iiif_url 'http://localhost:8000/iiif/2'
+drush vset islandora_internet_archive_bookreader_iiif_token_header 1
+drush vset islandora_internet_archive_bookreader_pagesource 'iiif'
 
 cd "$DRUPAL_HOME" || exit
 # Removes powered by drupal text and the area it blocks content with.
