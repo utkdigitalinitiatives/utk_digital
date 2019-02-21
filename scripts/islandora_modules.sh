@@ -25,7 +25,6 @@ done < "$SHARED_DIR"/configs/islandora-module-list-sans-tuque.txt
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 #- islandora_bagit -- custom
 git clone https://github.com/utkdigitalinitiatives/islandora_bagit
-git clone https://github.com/utkdigitalinitiatives/islandora_ingest_collections
 # - utk_lib_feedback
 # git clone https://github.com/utkdigitalinitiatives/utk_lib_feedback
 #- islandora_datastream_replace
