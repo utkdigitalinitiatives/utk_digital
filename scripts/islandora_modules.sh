@@ -40,12 +40,6 @@ git clone https://github.com/Islandora-Labs/islandora_social_metatags
 git clone https://github.com/yorkulibraries/islandora_transcript
 #- discoverygarden islandora collection search
 git clone https://github.com/discoverygarden/islandora_collection_search
-#- discoverygarden islandora paged tei seadragon
-git clone https://github.com/discoverygarden/islandora_paged_tei_seadragon
-#- discoverygarden islandora rest
-git clone https://github.com/discoverygarden/islandora_rest
-#- discoverygarden islandora_solution_pack_manuscript
-git clone https://github.com/discoverygarden/islandora_solution_pack_manuscript
 #- Islandora-mjordan islandora_scg
 git clone https://github.com/mjordan/islandora_scg
 # qadan / Islandora Batch Derivative Trigger
