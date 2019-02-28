@@ -6,6 +6,10 @@ sed -i '$i<role rolename="manager-gui"/>' /etc/tomcat/tomcat-users.xml
 sed -i '$i<user username="islandora" password="islandora" roles="manager-gui,admin-gui"/>' /etc/tomcat/tomcat-users.xml
 systemctl restart tomcat
 
+# add a redirect to collections from web root ( until we get something else there)
+sudo echo "Redirect /  /collections/" >> /etc/httpd/conf/httpd.conf
+sudo systemctl restart httpd
+
 # Set correct permissions on sites/default/files
 chown -R apache.apache "$DRUPAL_HOME"/sites/default/files
 
