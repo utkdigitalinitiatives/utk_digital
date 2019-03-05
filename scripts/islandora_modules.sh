@@ -25,7 +25,6 @@ done < "$SHARED_DIR"/configs/islandora-module-list-sans-tuque.txt
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 #- islandora_bagit -- custom
 git clone https://github.com/utkdigitalinitiatives/islandora_bagit
-git clone https://github.com/utkdigitalinitiatives/islandora_ingest_collections
 # - utk_lib_feedback
 # git clone https://github.com/utkdigitalinitiatives/utk_lib_feedback
 #- islandora_datastream_replace
@@ -41,19 +40,12 @@ git clone https://github.com/Islandora-Labs/islandora_social_metatags
 git clone https://github.com/yorkulibraries/islandora_transcript
 #- discoverygarden islandora collection search
 git clone https://github.com/discoverygarden/islandora_collection_search
-#- discoverygarden islandora paged tei seadragon
-git clone https://github.com/discoverygarden/islandora_paged_tei_seadragon
-#- discoverygarden islandora rest
-git clone https://github.com/discoverygarden/islandora_rest
-#- discoverygarden islandora_solution_pack_manuscript
-git clone https://github.com/discoverygarden/islandora_solution_pack_manuscript
 #- Islandora-mjordan islandora_scg
 git clone https://github.com/mjordan/islandora_scg
 # qadan / Islandora Batch Derivative Trigger
 git clone https://github.com/qadan/islandora_batch_derivative_trigger
 # MarcusBarnes / islandora_compound_batch
 git clone https://github.com/MarcusBarnes/islandora_compound_batch
-git clone https://github.com/SFULibrary/islandora_datastream_crud
 
 # Set git filemode false for git
 cd "$DRUPAL_HOME"/sites/all/modules || exit
@@ -111,7 +103,6 @@ fi
 # Enable Modules
 drush -y -u 1 en php_lib islandora objective_forms
 drush -y -u 1 en islandora_solr islandora_solr_metadata
-drush -y -u 1 en islandora_solr_facet_pages
 drush -y -u 1 en islandora_solr_views
 drush -y -u 1 en islandora_basic_collection islandora_pdf islandora_audio
 drush -y -u 1 en islandora_book islandora_compound_object
@@ -141,14 +132,13 @@ drush -y -u 1 islandora_collection_search
 drush -y -u 1 islandora_importer
 drush -y -u 1 islandora_batch_derivative_trigger
 drush -y -u 1 islandora_compound_batch
-drush -y -u 1 islandora_datastream_crud
 drush -y -u 1 islandora_social_metatags
 
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 
 # Set variables for Islandora modules
 drush eval "variable_set('islandora_audio_viewers', array('name' => array('none' => 'none', 'islandora_videojs' => 'islandora_videojs'), 'default' => 'islandora_videojs'))"
-drush eval "variable_set('islandora_fits_executable_path', '$FITS_HOME/fits-$FITS_VERSION/fits.sh')"
+drush eval "variable_set('islandora_fits_executable_path', '$FITS_HOME/fits/fits.sh')"
 drush eval "variable_set('islandora_lame_url', '/usr/bin/lame')"
 drush eval "variable_set('islandora_video_viewers', array('name' => array('none' => 'none', 'islandora_videojs' => 'islandora_videojs'), 'default' => 'islandora_videojs'))"
 drush eval "variable_set('islandora_video_ffmpeg_path', '/usr/local/bin/ffmpeg')"

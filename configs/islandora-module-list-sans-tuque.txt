@@ -32,7 +32,6 @@ islandora_videojs
 islandora_xacml_editor
 islandora_xml_forms
 islandora_xmlsitemap
-islandora_simple_workflow
 islandora_solr_facet_pages
 objective_forms
 php_lib

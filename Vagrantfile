@@ -22,8 +22,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = $hostname
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "c7vbb"
-  config.vm.box_url = "http://dlweb.lib.utk.edu/vboxes/c7vbb.json"
+  # config.vm.box = "c7vbb"
+  # config.vm.box_url = "http://dlweb.lib.utk.edu/vboxes/c7vbb.json"
+  config.vm.box = "utkdigitalbase"
+  config.vm.box_url = "http://dlweb.lib.utk.edu/vboxes/utkdigitalbase.json"
 
 
   unless  $forward.eql? "FALSE"  

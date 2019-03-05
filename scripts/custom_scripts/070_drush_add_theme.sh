@@ -17,9 +17,9 @@ git pull
 #sudo chown -hR vagrant:apache UTKdrupal
 sudo chown -hR vagrant:apache sis banners omega
 
-cp -r /home/vagrant/UTKdrupal/sis /var/www/drupal/sites/all/themes/ || exit
-cp -r /home/vagrant/UTKdrupal/banners /var/www/drupal/sites/all/themes/ || exit
-cp -r /home/vagrant/UTKdrupal/omega /var/www/drupal/sites/all/themes/ || exit
+cp -r /home/vagrant/UTKdrupal/sis "$DRUPAL_HOME"/sites/all/themes/ || exit
+cp -r /home/vagrant/UTKdrupal/banners "$DRUPAL_HOME"/sites/all/themes/ || exit
+cp -r /home/vagrant/UTKdrupal/omega "$DRUPAL_HOME"/sites/all/themes/ || exit
 cd "$DRUPAL_HOME"/sites/all/themes || exit
 
 # Set permissions UTKdrupal

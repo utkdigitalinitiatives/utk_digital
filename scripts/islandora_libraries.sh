@@ -12,11 +12,11 @@ fi
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 
 sudo drush cache-clear drush
-sudo drush -v videojs-plugin
-sudo drush -v pdfjs-plugin
-sudo drush -v iabookreader-plugin
-sudo drush -v colorbox-plugin
-sudo drush -v openseadragon-plugin
+drush -v videojs-plugin
+drush -v pdfjs-plugin
+drush -v iabookreader-plugin
+drush -v colorbox-plugin
+drush -v openseadragon-plugin
 sudo drush -v -y en islandora_openseadragon
 
 # After last drush call from root user, change cache permissions
