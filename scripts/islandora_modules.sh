@@ -34,7 +34,7 @@ git clone https://github.com/pc37utn/islandora_datastream_replace
 git clone https://github.com/Islandora-Labs/islandora_datastream_exporter
 #- discoverygarden islandora_binary_object
 git clone https://github.com/Islandora-Labs/islandora_binary_object
-git clone https://github.com/Islandora-Labs/islandora_social_metatags
+#git clone https://github.com/Islandora-Labs/islandora_social_metatags
 
 #- islandora_transcript
 git clone https://github.com/yorkulibraries/islandora_transcript
