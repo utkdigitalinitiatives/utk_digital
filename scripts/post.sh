@@ -21,12 +21,12 @@ chown -R apache.apache "$DRUPAL_HOME"/sites/default/files
 cd "$DRUPAL_HOME" || exit
 drush vset islandora_openseadragon_tilesource 'iiif'
 drush vset islandora_openseadragon_iiif_url 'http://localhost:8000/iiif/2'
-drush vset islandora_openseadragon_iiif_token_header 1
-drush vset islandora_openseadragon_iiif_identifier '[islandora_openseadragon:pid]~[islandora_openseadragon:dsid]~[islandora_openseadragon:token]'
+drush vset islandora_openseadragon_iiif_token_header 0
+drush vset islandora_openseadragon_iiif_identifier '/collections~islandora~object~[islandora_openseadragon:pid]~datastream~JP2~view~[islandora_openseadragon:token]'
 
 drush vset islandora_internet_archive_bookreader_iiif_identifier '[islandora_iareader:pid]~[islandora_iareader:dsid]~[islandora_iareader:token]'
 drush vset islandora_internet_archive_bookreader_iiif_url 'http://localhost:8000/iiif/2'
-drush vset islandora_internet_archive_bookreader_iiif_token_header 1
+drush vset islandora_internet_archive_bookreader_iiif_token_header 0
 drush vset islandora_internet_archive_bookreader_pagesource 'iiif'
 
 cd "$DRUPAL_HOME" || exit
