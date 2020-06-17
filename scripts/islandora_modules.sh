@@ -8,6 +8,14 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
   . "$SHARED_DIR"/configs/variables
 fi
 
+cd $DRUPAL_HOME/sites/
+# clone default repo
+git clone https://github.com/utkdigitalinitiatives/utk-islandora7-drupal
+
+mv -y ./all all-old
+mv -y ./utk-islandora7-drupal all
+
+
 # Permissions and ownership
 sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/libraries
 sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/modules

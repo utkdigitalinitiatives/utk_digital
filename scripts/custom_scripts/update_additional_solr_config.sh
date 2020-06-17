@@ -62,5 +62,5 @@ drush ev 'variable_set("islandora_basic_collection_metadata_info_table_drag_attr
 drush role-add-perm 'anonymous user' 'view fedora repository objects'
 drush role-add-perm 'authenticated user' 'view fedora repository objects'
 
-# Set front paget to repository page
+# Set front page to repository page
 drush vset -y site_frontpage 'islandora/object'

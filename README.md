@@ -20,7 +20,8 @@ Note that virtualization must be enabled in the host machine's BIOS settings.
 
 ### System Resources
 
-By default the virtual machine that is built uses 3GB of RAM. Your host machine will need to be able to support that. You can override the CPU and RAM allocation by creating `ISLANDORA_VAGRANT_CPUS` and `ISLANDORA_VAGRANT_MEMORY` environment variables and setting the values. For example, on an Ubuntu host you could add to `~/.bashrc`:
+By default the virtual machine that is built uses 4GB of RAM.
+ Your host machine will need to be able to support that. You can override the CPU and RAM allocation by creating `ISLANDORA_VAGRANT_CPUS` and `ISLANDORA_VAGRANT_MEMORY` environment variables and setting the values. For example, on an Ubuntu host you could add to `~/.bashrc`:
 
 ```bash
 export ISLANDORA_VAGRANT_CPUS=4

@@ -9,7 +9,7 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
   . "$SHARED_DIR"/configs/variables
 fi
 cd "$DRUPAL_HOME"/sites/all/modules || exit
-sudo drush cache-clear drush
+#sudo drush cache-clear drush
 #drush -v videojs-plugin
 #drush -v pdfjs-plugin
 #drush -v iabookreader-plugin
