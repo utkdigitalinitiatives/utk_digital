@@ -45,10 +45,10 @@ drush block-configure --module=islandora_solr --delta=explore --region=-1 --weig
 drush block-configure --module=islandora_solr --delta=search_navigation --region=-1 --weight=0
 drush block-configure --module=islandora_solr --delta=result_limit --region=-1 --weight=0
 drush block-configure --module=islandora_solr_facet_pages --delta=islandora-solr-facet-pag--region=-1 --weight=0
-drush block-configure --module=islandora_usage_stats --delta=top_usage --region=-1 --weight=0
-drush block-configure --module=islandora_usage_stats --delta=recent_activity --region=-1 --weight=0
-drush block-configure --module=islandora_usage_stats --delta=top_search --region=-1 --weight=0
-drush block-configure --module=islandora_usage_stats --delta=top_downloads --region=-1 --weight=0
+#drush block-configure --module=islandora_usage_stats --delta=top_usage --region=-1 --weight=0
+#drush block-configure --module=islandora_usage_stats --delta=recent_activity --region=-1 --weight=0
+#drush block-configure --module=islandora_usage_stats --delta=top_search --region=-1 --weight=0
+#drush block-configure --module=islandora_usage_stats --delta=top_downloads --region=-1 --weight=0
 drush block-configure --module=user --delta=online --region=-1 --weight=0
 drush block-configure --module=views --delta=usage_collection-usage_stats --region=-1 --weight=0
 drush block-configure --module=node --delta=recent --region=-1 --weight=0
