@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 $cpus   = ENV.fetch("ISLANDORA_VAGRANT_CPUS", "2")
-$memory = ENV.fetch("ISLANDORA_VAGRANT_MEMORY", "3000")
+$memory = ENV.fetch("ISLANDORA_VAGRANT_MEMORY", "4000")
 $hostname = ENV.fetch("ISLANDORA_VAGRANT_HOSTNAME", "islandora")
 $forward = ENV.fetch("ISLANDORA_VAGRANT_FORWARD", "TRUE")
 
@@ -23,15 +23,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   # config.vm.box = "c7vbb"
-  # config.vm.box_url = "http://dlweb.lib.utk.edu/vboxes/c7vbb.json"
+  # config.vm.box_url = "http://dlweb.lib.utk.edu/vboxes/utkdigitalbase-0.6.0.box"
   config.vm.box = "utkdigitalbase"
   config.vm.box_url = "http://dlweb.lib.utk.edu/vboxes/utkdigitalbase.json"
-
 
   unless  $forward.eql? "FALSE"  
     config.vm.network :forwarded_port, guest: 8080, host: 8080 # Tomcat
     config.vm.network :forwarded_port, guest: 3306, host: 3306 # MySQL
-    config.vm.network :forwarded_port, guest: 8000, host: 8000 # Apache
+    config.vm.network :forwarded_port, guest: 80, host: 8000 # Apache
   end
 
   config.vm.provider "virtualbox" do |vb|
