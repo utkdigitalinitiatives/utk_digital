@@ -7,7 +7,7 @@
 #systemctl restart tomcat
 
 # add a link to collections from web root ( until we get something else there)
-sudo tee -a /vhosts/digital/web/index.html &>/dev/null <<<EOF
+sudo tee -a /home/vagrant/index.html &>/dev/null <<<EOF
 <html><head><title>digital</title></head>
 <body>
  <hr />
@@ -15,6 +15,7 @@ sudo tee -a /vhosts/digital/web/index.html &>/dev/null <<<EOF
 </body>
 </html>
 EOF
+sudo mv /home/vagrant/index.html /vhosts/digital/web/
 
 # Set correct permissions on sites/default/files
 chown -R apache.apache "$DRUPAL_HOME"/sites/default/files

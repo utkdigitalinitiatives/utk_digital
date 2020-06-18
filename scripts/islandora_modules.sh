@@ -8,14 +8,12 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
   . "$SHARED_DIR"/configs/variables
 fi
 
-sudo cd /vhosts/digital/web/collections/sites/
-sudo touch test1
 # clone default repo
-  git config core.filemode false
+#  git config core.filemode false
 sudo git clone https://github.com/utkdigitalinitiatives/utk-islandora7-drupal
 
 sudo mv  /vhosts/digital/web/collections/sites/all /vhosts/digital/all-old
-sudo mv  /vhosts/digital/web/collections/sites/utk-islandora7-drupal all
+sudo mv  /home/vagrant/utk-islandora7-drupal /vhosts/digital/web/collections/sites/all
 
 
 # Permissions and ownership
@@ -112,27 +110,31 @@ fi
 
 # Enable Modules
 drush -y -u 1 en php_lib islandora objective_forms
-drush -y -u 1 en islandora_solr islandora_solr_metadata
-drush -y -u 1 en islandora_solr_views
-drush -y -u 1 en islandora_basic_collection islandora_pdf islandora_audio
-drush -y -u 1 en islandora_book islandora_compound_object
-drush -y -u 1 en islandora_basic_image islandora_large_image
-#drush -y -u 1 en islandora_newspaper islandora_video
-drush -y -u 1 en islandora_premis islandora_checksum islandora_checksum_checker
-#drush -y -u 1 en islandora_checksum_checker
-drush -y -u 1 en islandora_book_batch
-drush -y -u 1 en islandora_pdfjs islandora_videojs
 drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements
-drush -y -u 1 en xml_form_api jquery_update zip_importer islandora_basic_image
-drush -y -u 1 en islandora_compound_object
+drush -y -u 1 en xml_form_api jquery_update zip_importer
+drush -y -u 1 en islandora_importer
+drush -y -u 1 en islandora_basic_image
+drush -y -u 1 en islandora_basic_collection islandora_pdf islandora_audio
+drush -y -u 1 en islandora_large_image
+drush -y -u 1 en islandora_solr islandora_solr_metadata
 drush -y -u 1 en islandora_solr_config
+drush -y -u 1 en islandora_solr_views
+drush -y -u 1 en islandora_book 
+drush -y -u 1 en islandora_internet_archive_bookreader
+drush -y -u 1 en islandora_book_batch
+drush -y -u 1 en islandora_video
+drush -y -u 1 en islandora_compound_object
+drush -y -u 1 en islandora_premis
+drush -y -u 1 en islandora_checksum
+#drush -y -u 1 en islandora_checksum_checker
+drush -y -u 1 en islandora_pdfjs islandora_videojs
+drush -y -u 1 en islandora_compound_object
 drush -y -u 1 en islandora_fits
 drush -y -u 1 en islandora_ocr
 drush -y -u 1 en islandora_oai
 #drush -y -u 1 en islandora_simple_workflow
 drush -y -u 1 en islandora_xacml_api islandora_xacml_editor
 drush -y -u 1 en islandora_xmlsitemap colorbox
-drush -y -u 1 en islandora_internet_archive_bookreader
 drush -y -u 1 en islandora_bagit
 #drush -y -u 1 en islandora_usage_stats
 drush -y -u 1 en islandora_form_fieldpanel
@@ -141,11 +143,10 @@ drush -y -u 1 en islandora_form_fieldpanel
 drush -y -u 1 en islandora_binary_object
 drush -y -u 1 en islandora_batch_derivative_trigger
 drush -y -u 1 en islandora_compound_batch
-drush -y -u 1 islandora_collection_search
-drush -y -u 1 islandora_importer
-drush -y -u 1 islandora_batch_derivative_trigger
-drush -y -u 1 islandora_compound_batch
-drush -y -u 1 islandora_social_metatags
+drush -y -u 1 en islandora_collection_search
+drush -y -u 1 en islandora_batch_derivative_trigger
+drush -y -u 1 en islandora_compound_batch
+drush -y -u 1 en islandora_social_metatags
 
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 
