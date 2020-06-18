@@ -6,21 +6,21 @@ sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/themes
 cd "$DRUPAL_HOME"/sites/all/themes || exit
 
 # Clone UTKdrupal Theme
-cd $HOME_DIR
-git clone https://github.com/utkdigitalinitiatives/UTKdrupal
-cd UTKdrupal || exit
- git fetch
- git branch -r
- git checkout -b digital_collections origin/digital_collections
-git pull
+#cd $HOME_DIR
+#git clone https://github.com/utkdigitalinitiatives/UTKdrupal
+#cd UTKdrupal || exit
+# git fetch
+# git branch -r
+# git checkout -b digital_collections origin/digital_collections
+#git pull
 # Set permissions UTKdrupal
 #sudo chown -hR vagrant:apache UTKdrupal
-sudo chown -hR vagrant:apache sis banners omega
+#sudo chown -hR vagrant:apache sis banners omega
 
-cp -r /home/vagrant/UTKdrupal/sis "$DRUPAL_HOME"/sites/all/themes/ || exit
-cp -r /home/vagrant/UTKdrupal/banners "$DRUPAL_HOME"/sites/all/themes/ || exit
-cp -r /home/vagrant/UTKdrupal/omega "$DRUPAL_HOME"/sites/all/themes/ || exit
-cd "$DRUPAL_HOME"/sites/all/themes || exit
+#cp -r /home/vagrant/UTKdrupal/sis "$DRUPAL_HOME"/sites/all/themes/ || exit
+#cp -r /home/vagrant/UTKdrupal/banners "$DRUPAL_HOME"/sites/all/themes/ || exit
+#cp -r /home/vagrant/UTKdrupal/omega "$DRUPAL_HOME"/sites/all/themes/ || exit
+#cd "$DRUPAL_HOME"/sites/all/themes || exit
 
 # Set permissions UTKdrupal
 #sudo chown -hR vagrant:apache UTKdrupal
@@ -54,14 +54,14 @@ drush dis -y comment contextual dashboard overlay
 #drush -y dis seven
 
 # Enable devel and its prereqs
-drush -y vset theme_debug 1
-drush -y dis devel
-drush -y dl devel
-sudo yum -y install subversion
-drush -y en devel
+#drush -y vset theme_debug 1
+#drush -y dis devel
+#drush -y dl devel
+#sudo yum -y install subversion
+#drush -y en devel
 
 # Rebuild on every page, needs to be disabled on production env
-drush -y vset devel_rebuild_theme_registry 1
+#drush -y vset devel_rebuild_theme_registry 1
 
 # Fix Admin menu
-drush -y vset admin_menu_margin_top 1
+#drush -y vset admin_menu_margin_top 1
