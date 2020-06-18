@@ -10,10 +10,10 @@ fi
 
 cd $DRUPAL_HOME/sites/
 # clone default repo
-git clone https://github.com/utkdigitalinitiatives/utk-islandora7-drupal
+sudo git clone https://github.com/utkdigitalinitiatives/utk-islandora7-drupal
 
-mv -y ./all all-old
-mv -y ./utk-islandora7-drupal all
+sudo mv -y ./all all-old
+sudo mv -y ./utk-islandora7-drupal all
 
 
 # Permissions and ownership
@@ -117,13 +117,16 @@ drush -y -u 1 en islandora_book islandora_compound_object
 drush -y -u 1 en islandora_basic_image islandora_large_image
 #drush -y -u 1 en islandora_newspaper islandora_video
 drush -y -u 1 en islandora_premis islandora_checksum islandora_checksum_checker
+#drush -y -u 1 en islandora_checksum_checker
 drush -y -u 1 en islandora_book_batch
 drush -y -u 1 en islandora_pdfjs islandora_videojs
 drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements
 drush -y -u 1 en xml_form_api jquery_update zip_importer islandora_basic_image
 drush -y -u 1 en islandora_compound_object
 drush -y -u 1 en islandora_solr_config
-drush -y -u 1 en islandora_fits islandora_ocr islandora_oai
+drush -y -u 1 en islandora_fits
+drush -y -u 1 en islandora_ocr
+drush -y -u 1 en islandora_oai
 #drush -y -u 1 en islandora_simple_workflow
 drush -y -u 1 en islandora_xacml_api islandora_xacml_editor
 drush -y -u 1 en islandora_xmlsitemap colorbox
