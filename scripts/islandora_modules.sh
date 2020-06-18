@@ -11,10 +11,11 @@ fi
 sudo cd /vhosts/digital/web/collections/sites/
 sudo touch test1
 # clone default repo
+  git config core.filemode false
 sudo git clone https://github.com/utkdigitalinitiatives/utk-islandora7-drupal
 
-sudo mv  ./all all-old
-sudo mv  ./utk-islandora7-drupal all
+sudo mv  /vhosts/digital/web/collections/sites/all /vhosts/digital/all-old
+sudo mv  /vhosts/digital/web/collections/sites/utk-islandora7-drupal all
 
 
 # Permissions and ownership
