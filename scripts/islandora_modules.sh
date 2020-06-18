@@ -8,12 +8,13 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
   . "$SHARED_DIR"/configs/variables
 fi
 
-cd $DRUPAL_HOME/sites/
+sudo cd /vhosts/digital/web/collections/sites/
+sudo touch test1
 # clone default repo
 sudo git clone https://github.com/utkdigitalinitiatives/utk-islandora7-drupal
 
-sudo mv -y ./all all-old
-sudo mv -y ./utk-islandora7-drupal all
+sudo mv  ./all all-old
+sudo mv  ./utk-islandora7-drupal all
 
 
 # Permissions and ownership
@@ -26,17 +27,17 @@ sudo chmod -R 755 "$DRUPAL_HOME"/sites/default/files
 
 # Clone all Islandora Foundation modules
 cd "$DRUPAL_HOME"/sites/all/modules || exit
-#while read -r LINE; do
+# while read -r LINE; do
 #  git clone https://github.com/Islandora/"$LINE"
-#done < "$SHARED_DIR"/configs/islandora-module-list-sans-tuque.txt
+# done < "$SHARED_DIR"/configs/islandora-module-list-sans-tuque.txt
 # Clone all non-Islandora modules
-#cd "$DRUPAL_HOME"/sites/all/modules || exit
+# cd "$DRUPAL_HOME"/sites/all/modules || exit
 #- islandora_bagit -- custom
-#git clone https://github.com/utkdigitalinitiatives/islandora_bagit
+# git clone https://github.com/utkdigitalinitiatives/islandora_bagit
 # - utk_lib_feedback
 # git clone https://github.com/utkdigitalinitiatives/utk_lib_feedback
 #- islandora_datastream_replace
-#git clone https://github.com/pc37utn/islandora_datastream_replace
+# git clone https://github.com/pc37utn/islandora_datastream_replace
 
 #- islandora_datastream_exporter
 #git clone https://github.com/Islandora-Labs/islandora_datastream_exporter
