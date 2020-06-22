@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Setup a user for Tomcat Manager
-#sed -i '$i<role rolename="admin-gui"/>' /etc/tomcat/tomcat-users.xml
-#sed -i '$i<role rolename="manager-gui"/>' /etc/tomcat/tomcat-users.xml
-#sed -i '$i<user username="islandora" password="islandora" roles="manager-gui,admin-gui"/>' /etc/tomcat/tomcat-users.xml
-#systemctl restart tomcat
-
 # add a link to collections from web root ( until we get something else there)
 sudo tee -a /home/vagrant/index.html &>/dev/null <<<EOF
 <html><head><title>digital</title></head>
