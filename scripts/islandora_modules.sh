@@ -66,44 +66,52 @@ fi
 
 # Enable Modules
 drush -y -u 1 en libraries 
-drush -y -u 1 en features context
 drush -y -u 1 en php_lib islandora objective_forms
 drush -y -u 1 en xml_forms xml_form_builder xml_schema_api xml_form_elements
-drush -y -u 1 en xml_form_api jquery_update zip_importer
+drush -y -u 1 en xml_form_api
+drush -y -u 1 en jquery_update
+drush -y -u 1 en zip_importer
 drush -y -u 1 en islandora_importer
 drush -y -u 1 en islandora_basic_image
-drush -y -u 1 en islandora_basic_collection islandora_pdf islandora_audio
+drush -y -u 1 en islandora_basic_collection
 drush -y -u 1 en islandora_large_image
+drush -y -u 1 en islandora_internet_archive_bookreader
+drush -y -u 1 en islandora_paged_content
+drush -y -u 1 en colorbox
+drush -y -u 1 en islandora_book 
+drush -y -u 1 en islandora_pdf
+drush -y -u 1 en islandora_audio
 drush -y -u 1 en islandora_solr islandora_solr_metadata
 drush -y -u 1 en islandora_solr_config
 drush -y -u 1 en islandora_solr_views
-drush -y -u 1 en islandora_book 
-drush -y -u 1 en islandora_internet_archive_bookreader
 drush -y -u 1 en islandora_book_batch
 drush -y -u 1 en islandora_video
 drush -y -u 1 en islandora_compound_object
 drush -y -u 1 en islandora_premis
 drush -y -u 1 en islandora_checksum
 #drush -y -u 1 en islandora_checksum_checker
-drush -y -u 1 en islandora_pdfjs islandora_videojs
-drush -y -u 1 en islandora_compound_object
+drush -y -u 1 en islandora_pdfjs
+drush -y -u 1 en islandora_videojs
+#drush -y -u 1 en islandora_compound_object
 drush -y -u 1 en islandora_fits
 drush -y -u 1 en islandora_ocr
 drush -y -u 1 en islandora_oai
 #drush -y -u 1 en islandora_simple_workflow
 drush -y -u 1 en islandora_xacml_api islandora_xacml_editor
-drush -y -u 1 en islandora_xmlsitemap colorbox
+drush -y -u 1 en islandora_xmlsitemap
 drush -y -u 1 en islandora_bagit
 #drush -y -u 1 en islandora_usage_stats
 drush -y -u 1 en islandora_form_fieldpanel
 # drush -y -u 1 en utk_lib_feedback
-drush -y -u 1 en islandora_binary_object
-drush -y -u 1 en islandora_batch_derivative_trigger
-drush -y -u 1 en islandora_compound_batch
+#drush -y -u 1 en islandora_binary_object
+#drush -y -u 1 en islandora_batch_derivative_trigger
+#drush -y -u 1 en islandora_compound_batch
 drush -y -u 1 en islandora_collection_search
-drush -y -u 1 en islandora_batch_derivative_trigger
-drush -y -u 1 en islandora_compound_batch
-drush -y -u 1 en islandora_social_metatags
+#drush -y -u 1 en islandora_batch_derivative_trigger
+#drush -y -u 1 en islandora_compound_batch
+#drush -y -u 1 en islandora_social_metatags
+drush -y -u 1 en islandora_context
+drush -y -u 1 en features context
 
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 
