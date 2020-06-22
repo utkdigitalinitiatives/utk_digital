@@ -15,7 +15,6 @@ sudo git clone https://github.com/utkdigitalinitiatives/utk-islandora7-drupal
 sudo mv  /vhosts/digital/web/collections/sites/all /vhosts/digital/all-old
 sudo mv  /home/vagrant/utk-islandora7-drupal /vhosts/digital/web/collections/sites/all
 
-sudo mkdir "$DRUPAL_HOME"/sites/all/modules/custom
 # Permissions and ownership
 sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/libraries
 sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/modules
