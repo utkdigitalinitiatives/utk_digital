@@ -4,5 +4,9 @@ package.box
 testjp2
 testtif
 
-#hide local machine sites all
-sites/all/*
+# hide local machine sites all
+sites/all
+
+# IDE stuff
+.idea
+.idea/*
