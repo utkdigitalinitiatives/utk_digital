@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 echo "drush enable theme"
 # Set permissions /sites/all/themes
-sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/themes
-sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/themes
+#sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/themes
+#sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/themes
 cd "$DRUPAL_HOME"/sites/all/themes || exit
 
 # Clone UTKdrupal Theme
