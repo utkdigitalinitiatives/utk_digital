@@ -3,3 +3,6 @@ downloads
 package.box
 testjp2
 testtif
+
+#hide local machine sites all
+sites/all/*
