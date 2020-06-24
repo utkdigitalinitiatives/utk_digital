@@ -8,6 +8,8 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
   . "$SHARED_DIR"/configs/variables
 fi
 
+sudo su apache
+
 # clone repo via https
 cd "$DRUPAL_HOME"/sites || exit
 sudo rm -rf all
@@ -17,6 +19,8 @@ sudo git clone https://github.com/utkdigitalinitiatives/utk-islandora7-drupal al
 cd "$DRUPAL_HOME"/sites/all || exit
 sudo git remote remove origin
 sudo git remote add origin git@github.com:utkdigitalinitiatives/utk-islandora7-drupal.git
+
+sudo su vagrant
 
 # Permissions and ownership
 #sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/libraries
