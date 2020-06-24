@@ -8,8 +8,6 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
   . "$SHARED_DIR"/configs/variables
 fi
 
-sudo su apache
-
 # clone repo via https
 cd "$DRUPAL_HOME"/sites || exit
 sudo rm -rf all
@@ -20,17 +18,15 @@ cd "$DRUPAL_HOME"/sites/all || exit
 sudo git remote remove origin
 sudo git remote add origin git@github.com:utkdigitalinitiatives/utk-islandora7-drupal.git
 
-sudo su vagrant
-
 # Permissions and ownership
-#sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/libraries
-#sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/modules
-#sudo chown -hR apache:apache "$DRUPAL_HOME"/sites/default/files
-#sudo chown -hR apache:apache "$DRUPAL_HOME"/sites/all/modules/custom
-#sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/libraries
-#sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/modules
-#sudo chmod -R 755 "$DRUPAL_HOME"/sites/default/files
-#sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/modules/custom
+sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/libraries
+sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/modules
+sudo chown -hR apache:apache "$DRUPAL_HOME"/sites/default/files
+sudo chown -hR apache:apache "$DRUPAL_HOME"/sites/all/modules/custom
+sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/libraries
+sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/modules
+sudo chmod -R 755 "$DRUPAL_HOME"/sites/default/files
+sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/modules/custom
 
 
 cd "$DRUPAL_HOME"/sites/all/modules || exit
