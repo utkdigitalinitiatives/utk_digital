@@ -22,8 +22,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = $hostname
 
   # add synced_folder
-  config.vm.synced_folder "sites/all", "/vhosts/digital/web/collections/sites/all"
-
+  config.vm.synced_folder "sites/all", "/vhosts/digital/web/collections/sites/all",
+    owner: "vagrant",
+    group: "apache",
+    mount_options: ["dmode=775,fmode=664"]
+    
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "utkdigitalbase"
   config.vm.box_url = "http://dlweb.lib.utk.edu/vboxes/utkdigitalbase.json"
