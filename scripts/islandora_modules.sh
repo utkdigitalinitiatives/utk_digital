@@ -8,12 +8,15 @@ if [ -f "$SHARED_DIR/configs/variables" ]; then
   . "$SHARED_DIR"/configs/variables
 fi
 
-# clone default repo
-#  git config core.filemode false
-sudo git clone https://github.com/utkdigitalinitiatives/utk-islandora7-drupal
+# clone repo via https
+cd "$DRUPAL_HOME"/sites || exit
+sudo rm -rf all
+sudo git clone https://github.com/utkdigitalinitiatives/utk-islandora7-drupal all
 
-sudo mv  /vhosts/digital/web/collections/sites/all /vhosts/digital/all-old
-sudo mv  /home/vagrant/utk-islandora7-drupal /vhosts/digital/web/collections/sites/all
+# reset remote origin to use ssh-key
+cd "$DRUPAL_HOME"/sites/all || exit
+sudo git remote remove origin
+sudo git remote add origin git@github.com:utkdigitalinitiatives/utk-islandora7-drupal.git
 
 # Permissions and ownership
 sudo chown -hR vagrant:apache "$DRUPAL_HOME"/sites/all/libraries
