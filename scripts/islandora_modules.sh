@@ -66,6 +66,9 @@ fi
 #  mv "$DRUPAL_HOME/sites/all/modules/islandora_internet_archive_bookreader/islandora_internet_archive_bookreader.drush.inc" "$HOME_DIR/.drush"
 #fi
 
+# create root fedora object
+curl -s -u "fedoraAdmin:fedoraAdmin" -XPOST "http://localhost:8080/fedora/objects/digital:collections?label=digitalcollections"
+
 # Enable Modules
 drush -y -u 1 en libraries 
 drush -y -u 1 en php_lib islandora objective_forms
@@ -134,3 +137,4 @@ drush eval "variable_set('islandora_ocr_tesseract', '/usr/bin/tesseract')"
 drush eval "variable_set('islandora_batch_java', '/usr/bin/java')"
 drush eval "variable_set('image_toolkit', 'imagemagick')"
 drush eval "variable_set('imagemagick_convert', '/usr/bin/convert')"
+drush eval "variable_set('islandora_repository_pid', 'digital:collections')"
