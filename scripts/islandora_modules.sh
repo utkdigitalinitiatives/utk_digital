@@ -69,7 +69,7 @@ drush -y -u 1 en islandora_videojs
 drush -y -u 1 en islandora_fits
 drush -y -u 1 en islandora_ocr
 drush -y -u 1 en islandora_oai
-#drush -y -u 1 en islandora_simple_workflow
+drush -y -u 1 en islandora_transcript
 drush -y -u 1 en islandora_xacml_api islandora_xacml_editor
 drush -y -u 1 en islandora_xmlsitemap
 drush -y -u 1 en islandora_bagit
