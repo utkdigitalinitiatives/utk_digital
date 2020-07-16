@@ -36,7 +36,8 @@ if [ ! -d "$HOME_DIR/.drush" ]; then
   mkdir "$HOME_DIR/.drush"
   sudo chown vagrant:vagrant "$HOME_DIR"/.drush
 fi
-
+# disable modules
+drush -y -u 1 dis xmlsitemap
 # Enable Modules
 drush -y -u 1 en libraries 
 drush -y -u 1 en php_lib islandora objective_forms
@@ -71,7 +72,7 @@ drush -y -u 1 en islandora_ocr
 drush -y -u 1 en islandora_oai
 drush -y -u 1 en islandora_transcript
 drush -y -u 1 en islandora_xacml_api islandora_xacml_editor
-drush -y -u 1 en islandora_xmlsitemap
+#drush -y -u 1 en islandora_xmlsitemap
 drush -y -u 1 en islandora_bagit
 #drush -y -u 1 en islandora_usage_stats
 drush -y -u 1 en islandora_form_fieldpanel
