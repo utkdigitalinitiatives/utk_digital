@@ -50,6 +50,7 @@ drush -y -u 1 en islandora_basic_image
 drush -y -u 1 en islandora_basic_collection
 drush -y -u 1 en islandora_large_image
 drush -y -u 1 en islandora_internet_archive_bookreader
+drush -y -u 1 en islandora_openseadragon
 drush -y -u 1 en islandora_paged_content
 drush -y -u 1 en colorbox
 drush -y -u 1 en islandora_book 
