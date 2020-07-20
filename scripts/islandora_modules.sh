@@ -30,42 +30,14 @@ sudo chmod -R 755 "$DRUPAL_HOME"/sites/all/modules/custom
 
 
 cd "$DRUPAL_HOME"/sites/all/modules || exit
-# Clone all non-Islandora modules
-# cd "$DRUPAL_HOME"/sites/all/modules || exit
-#- islandora_bagit -- custom
-# git clone https://github.com/utkdigitalinitiatives/islandora_bagit
-# - utk_lib_feedback
-# git clone https://github.com/utkdigitalinitiatives/utk_lib_feedback
-#- islandora_datastream_replace
-# git clone https://github.com/pc37utn/islandora_datastream_replace
-#git config core.filemode false
 
 # Check for a user's .drush folder, create if it doesn't exist
 if [ ! -d "$HOME_DIR/.drush" ]; then
   mkdir "$HOME_DIR/.drush"
   sudo chown vagrant:vagrant "$HOME_DIR"/.drush
 fi
-
-# Move OpenSeadragon drush file to user's .drush folder
-#if [ -d "$HOME_DIR/.drush" ] && [ -f "$DRUPAL_HOME/sites/all/modules/islandora_openseadragon/islandora_openseadragon.drush.inc" ]; then
-#  mv "$DRUPAL_HOME/sites/all/modules/islandora_openseadragon/islandora_openseadragon.drush.inc" "$HOME_DIR/.drush"
-#fi
-
-# Move video.js drush file to user's .drush folder
-#if [ -d "$HOME_DIR/.drush" ] && [ -f "$DRUPAL_HOME/sites/all/modules/islandora_videojs/islandora_videojs.drush.inc" ]; then
-#  mv "$DRUPAL_HOME/sites/all/modules/islandora_videojs/islandora_videojs.drush.inc" "$HOME_DIR/.drush"
-#fi
-
-# Move pdf.js drush file to user's .drush folder
-#if [ -d "$HOME_DIR/.drush" ] && [ -f "$DRUPAL_HOME/sites/all/modules/islandora_pdfjs/islandora_pdfjs.drush.inc" ]; then
-#  mv "$DRUPAL_HOME/sites/all/modules/islandora_pdfjs/islandora_pdfjs.drush.inc" "$HOME_DIR/.drush"
-#fi
-
-# Move IA Bookreader drush file to user's .drush folder
-#if [ -d "$HOME_DIR/.drush" ] && [ -f "$DRUPAL_HOME/sites/all/modules/islandora_internet_archive_bookreader/islandora_internet_archive_bookreader.drush.inc" ]; then
-#  mv "$DRUPAL_HOME/sites/all/modules/islandora_internet_archive_bookreader/islandora_internet_archive_bookreader.drush.inc" "$HOME_DIR/.drush"
-#fi
-
+# disable modules
+drush -y -u 1 dis xmlsitemap
 # Enable Modules
 drush -y -u 1 en libraries 
 drush -y -u 1 en php_lib islandora objective_forms
@@ -78,6 +50,7 @@ drush -y -u 1 en islandora_basic_image
 drush -y -u 1 en islandora_basic_collection
 drush -y -u 1 en islandora_large_image
 drush -y -u 1 en islandora_internet_archive_bookreader
+drush -y -u 1 en islandora_openseadragon
 drush -y -u 1 en islandora_paged_content
 drush -y -u 1 en colorbox
 drush -y -u 1 en islandora_book 
@@ -98,9 +71,9 @@ drush -y -u 1 en islandora_videojs
 drush -y -u 1 en islandora_fits
 drush -y -u 1 en islandora_ocr
 drush -y -u 1 en islandora_oai
-#drush -y -u 1 en islandora_simple_workflow
+drush -y -u 1 en islandora_transcript
 drush -y -u 1 en islandora_xacml_api islandora_xacml_editor
-drush -y -u 1 en islandora_xmlsitemap
+#drush -y -u 1 en islandora_xmlsitemap
 drush -y -u 1 en islandora_bagit
 #drush -y -u 1 en islandora_usage_stats
 drush -y -u 1 en islandora_form_fieldpanel
@@ -118,6 +91,7 @@ drush -y -u 1 en features context
 cd "$DRUPAL_HOME"/sites/all/modules || exit
 
 # Set variables for Islandora modules
+drush eval "variable_set('islandora_repository_pid', 'islandora:root')"
 drush eval "variable_set('islandora_audio_viewers', array('name' => array('none' => 'none', 'islandora_videojs' => 'islandora_videojs'), 'default' => 'islandora_videojs'))"
 drush eval "variable_set('islandora_fits_executable_path', '$FITS_HOME/fits/fits.sh')"
 drush eval "variable_set('islandora_lame_url', '/usr/bin/lame')"

@@ -33,7 +33,7 @@ drush vset -y islandora_basic_collection_default_view 'grid'
 drush vset -y islandora_basic_collection_disable_collection_policy_delete 1
 drush vset -y islandora_basic_collection_disable_count_object 0
 drush vset -y islandora_basic_collection_disable_display_generation 0
-drush vset -y islandora_basic_collection_display_backend 'islandora_solr_query_backend'
+#drush vset -y islandora_basic_collection_display_backend 'islandora_solr_query_backend'
 drush vset -y islandora_basic_collection_page_size: '12'
 drush vset -y islandora_collection_metadata_display: 0
 drush vset -y islandora_solr_base_sort: 'score desc, mods_identifier_local_ss asc'
