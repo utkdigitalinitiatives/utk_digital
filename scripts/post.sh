@@ -53,5 +53,5 @@ drush block-configure --module=node --delta=syndicate --region=-1 --weight=0
 drush block-configure --module=comment --delta=recent --region=-1 --weight=0
 
 # To allow for direct editing from an IDE modify the password authentication via ssh
-sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-service ssh reload
+sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+sudo service sshd reload
