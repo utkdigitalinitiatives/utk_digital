@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # add a link to collections from web root ( until we get something else there)
-sudo tee -a /home/vagrant/index.html &>/dev/null <<<EOF
+sudo tee -a /home/vagrant/index.html &>/dev/null <<EOF
 <html><head><title>digital</title></head>
 <body>
  <hr />
@@ -9,6 +9,7 @@ sudo tee -a /home/vagrant/index.html &>/dev/null <<<EOF
 </body>
 </html>
 EOF
+
 sudo mv /home/vagrant/index.html /vhosts/digital/web/
 
 # Set correct permissions on sites/default/files
@@ -50,3 +51,7 @@ drush block-configure --module=views --delta=usage_collection-usage_stats --regi
 drush block-configure --module=node --delta=recent --region=-1 --weight=0
 drush block-configure --module=node --delta=syndicate --region=-1 --weight=0
 drush block-configure --module=comment --delta=recent --region=-1 --weight=0
+
+# To allow for direct editing from an IDE modify the password authentication via ssh
+sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+sudo service sshd reload
