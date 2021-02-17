@@ -22,6 +22,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = $hostname
 
   # add synced_folder
+  config.vm.synced_folder "misc/assemble", "/vhosts/digital/web/assemble",
+    owner: "vagrant",
+    group: "apache",
+    mount_options: ["dmode=775,fmode=664"]
+
   config.vm.synced_folder "sites/all", "/vhosts/digital/web/collections/sites/all",
     owner: "vagrant",
     group: "apache",
@@ -43,7 +48,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   shared_dir = "/vagrant"
-
+  config.vm.provision :shell, path: "./scripts/iiif_assemble.sh", :args => shared_dir, :privileged => false
   config.vm.provision :shell, path: "./scripts/islandora_modules.sh", :args => shared_dir, :privileged => false
   config.vm.provision :shell, path: "./scripts/islandora_libraries.sh", :args => shared_dir, :privileged => false
   if File.exist?("./scripts/custom.sh") then
