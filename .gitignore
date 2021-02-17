@@ -5,8 +5,8 @@ testjp2
 testtif
 
 # hide local machine sites all
-misc
-misc/*
+misc/assemble
+misc/assemble/*
 sites/all
 sites/all/*
 
