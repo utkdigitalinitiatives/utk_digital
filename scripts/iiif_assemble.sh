@@ -11,12 +11,12 @@ fi
 # clone repo via https
 cd /vhosts/digital/web || exit
 sudo rm -rf assemble
-sudo git clone https://github.com/mathewjordan/iiif_assemble assemble
+sudo git clone https://github.com/utkdigitalinitiatives/iiif_assemble assemble
 
 # reset remote origin to use ssh-key
 cd assemble
 sudo git remote remove origin
-sudo git remote add origin git@github.com:mathewjordan/iiif_assemble.git
+sudo git remote add origin git@github.com:utkdigitalinitiatives/iiif_assemble.git
 
 echo "Installing Composer"
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
